@@ -1,3 +1,4 @@
+// Show reading in the OLED display
 function ShowInOLED (temp: number, hum: number, soil: number) {
     OLED.clear()
     OLED.writeStringNewLine("Temp: " + temp + " C")
@@ -6,6 +7,7 @@ function ShowInOLED (temp: number, hum: number, soil: number) {
     OLED.newLine()
     OLED.writeStringNewLine("Soil: " + Math.round(soil) + "%")
 }
+// Initialize the global variables with reading from sensors
 function InitReadings () {
     hum = dht11_dht22.readData(dataType.humidity)
     temp = dht11_dht22.readData(dataType.temperature)
